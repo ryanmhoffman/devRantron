@@ -7,7 +7,7 @@ class RantCard extends Component {
       image = this.props.rant.attached_image.url
     }
     return (
-      <div className="rant_card row" >
+      <div className="rant_card" >
         <div className="card blue-grey darken-1">
           <div className="card-content white-text">
             <p>{this.props.rant.text}</p>

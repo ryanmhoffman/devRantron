@@ -41,7 +41,7 @@ class Rants extends Component {
     }
     return (
       <div className="row" id="rantsFeed" >
-        <div className="rants col s6" >
+        <div className="rants" >
           {
             rants.currentRants.map(rant => <RantCard rant={rant} key={rant.id} />)
           }
