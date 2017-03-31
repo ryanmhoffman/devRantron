@@ -9,6 +9,7 @@ export function fetch(type, amount, page = 0) {
       state: STATE.LOADING,
       feedType: type,
     });
+    console.log(page);
     rantscript
       .rants(type, amount, amount * page)
       .then((res) => {
