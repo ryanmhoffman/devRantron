@@ -41,18 +41,11 @@ class Rants extends Component {
     }
     return (
       <div className="row" id="rantsFeed" >
-        {
-        rants.currentRants.map((currentRants, index) => {
-          const key = `column${index}`;
-          return (
-            <div className="rants col s6" id={key} key={key} >
-              {
-                currentRants.map(rant => <RantCard rant={rant} key={rant.id} />)
-              }
-            </div>
-          );
-        })
-        }
+        <div className="rants col s6" >
+          {
+            rants.currentRants.map(rant => <RantCard rant={rant} key={rant.id} />)
+          }
+        </div>
       </div>
     );
   }
