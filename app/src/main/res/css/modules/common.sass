@@ -113,6 +113,7 @@ body.#{$theme}
 
   .main_container
     position: absolute
+    min-height: calc(100vh - 36px)
     width: calc(100% - #{$button-width})
     left: $button-width
     top: $button-height
@@ -149,12 +150,13 @@ body.#{$theme}
         background-color: $main-color
 
   .center
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
 
   .rant_card
     display: inline-block
+    width: 100%
     .card
       background-color: $rant-card-background !important
     p

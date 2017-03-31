@@ -32,7 +32,7 @@ class Rants extends Component {
     if (rants.state === STATE.LOADING) {
       return (
         <div>
-          <div id="loaderCont" >
+          <div id="loaderCont" style={{ height: 'calc(100vh - 36px - 30px)' }}>
             <div className="loader" id="loader1" />
             <div className="loader" id="loader2" />
           </div>
