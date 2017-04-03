@@ -6,6 +6,23 @@ import { STATE } from '../../consts/state';
 import { FEED } from '../../consts/feed';
 
 class Rants extends Component {
+<<<<<<< HEAD
+=======
+  /* Ignore for now, not always running componentDidMount() {
+    const { rants } = this.props;
+
+    document.body.onscroll = () => {
+      console.log(document.body.scrollTop, document.body.scrollHeight, window.innerHeight * 2);
+      console.log(document.body.scrollTop > document.body.scrollHeight - (window.innerHeight * 2));
+
+      if (document.body.scrollTop > document.body.scrollHeight - (window.innerHeight * 2) && rants.state !== STATE.LOADING) {
+        console.log('Load Rants');
+        this.props.fetch(rants.feedType, 25, rants.page);
+      }
+    }
+  } */
+
+>>>>>>> upstream/two_column
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
@@ -17,12 +34,16 @@ class Rants extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
   handleScroll(event) {
+<<<<<<< HEAD
     const { rants } = this.props;
+=======
+>>>>>>> upstream/two_column
     const windowHeight = 'innerHeight' in window ? window.innerHeight : document.documentElement.offsetHeight;
     const body = document.body;
     const html = document.documentElement;
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.pageYOffset;
+<<<<<<< HEAD
     if (windowBottom + (windowHeight * 2) >= docHeight && rants.state !== STATE.LOADING) {
       this.props.fetch(
         this.props.rants.feedType,
@@ -37,6 +58,24 @@ class Rants extends Component {
       return (
         <div>
           <div id="loaderCont" >
+=======
+    if (windowBottom >= docHeight) {
+      this.props.fetch(
+        this.props.rants.feedType,
+        100,
+        this.props.rants.page,
+      );
+    }
+  }
+
+  render() {
+    const { rants } = this.props;
+
+    if (rants.state === STATE.LOADING && rants.currentRants.length === 0) {
+      return (
+        <div>
+          <div id="loaderCont" style={{ height: 'calc(100vh - 36px - 30px)' }}>
+>>>>>>> upstream/two_column
             <div className="loader" id="loader1" />
             <div className="loader" id="loader2" />
           </div>
@@ -44,6 +83,7 @@ class Rants extends Component {
       );
     }
     return (
+<<<<<<< HEAD
       <div className="row rantContainer" >
         {
         rants.currentRants.map((currentRants, index) => {
@@ -57,6 +97,14 @@ class Rants extends Component {
           );
         })
         }
+=======
+      <div className="row" id="rantsFeed" >
+        <div className="rants" >
+          {
+            rants.currentRants.map(rant => <RantCard rant={rant} key={rant.id} />)
+          }
+        </div>
+>>>>>>> upstream/two_column
       </div>
     );
   }
@@ -68,4 +116,8 @@ function mapStateToProps(state) {
   };
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/two_column
 export default connect(mapStateToProps, { fetch })(Rants);

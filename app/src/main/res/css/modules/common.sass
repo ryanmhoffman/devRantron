@@ -113,6 +113,7 @@ body.#{$theme}
 
   .main_container
     position: absolute
+    min-height: calc(100vh - 36px)
     width: calc(100% - #{$button-width})
     left: $button-width
     top: $button-height
@@ -152,6 +153,7 @@ body.#{$theme}
     position: relative
     top: 50%
     transform: translateY(-50%)
+<<<<<<< HEAD
   .rantContainer
     width: 1200px
   .rant_card
@@ -194,9 +196,22 @@ body.#{$theme}
           i
             font-size: 52px
 
+=======
+
+  .rant_card
+    display: inline-block
+    width: 100%
+>>>>>>> upstream/two_column
     .card
       background-color: $rant-card-background !important
     p
       color: white
       text-align: left
+<<<<<<< HEAD
       font-family: Helvetica, Arial, sans-serif
+=======
+      font-family: Helvetica, Arial, sans-serif;
+
+  #rantsFeed
+    column-count: 2
+>>>>>>> upstream/two_column
